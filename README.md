@@ -1,7 +1,5 @@
 # useCookieConsent
 
-React hook for easy cookie consent management.
-
 ## Disclaimer
 
 Although code in this repository is oriented to satisfy GDPR cookie rules, neither author nor contributors to this repository will be responsible for any non-compliance with the law. Please make sure that this repository provides all the functionality to satisfy requirements for your project. If you find something that can be improved please create an issue or send a PR with your fixes!
