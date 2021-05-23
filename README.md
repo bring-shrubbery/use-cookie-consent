@@ -28,12 +28,26 @@ The hook in this repository will provide a way to manage these types of cookies.
 
 ```tsx
 import {useCookieConsent} from 'use-cookie-consent';
+
+export const YourComponent = () => {
+  const {consent, acceptAllCookies, declineAllCookies} = useCookieConsent();
+
+  return (
+    <div>
+      <h3>
+        {`Third party cookies ${consent.thirdParty ? 'approved' : 'rejected'}`}
+      </h3>
+      <button onClick={acceptAllCookies}>Accept all</button>
+      <button onClick={declineAllCookies}>Reject all</button>
+    </div>
+  );
+};
 ```
-
-## Issues
-
-## Contributing
 
 ## Author
 
+[Antoni Silvestrovic](https://github.com/bring-shrubbery)
+
 ## License
+
+[MIT](https://github.com/bring-shrubbery/use-cookie-consent/blob/master/LICENSE)
