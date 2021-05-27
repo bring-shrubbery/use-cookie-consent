@@ -22,6 +22,20 @@ This React hook is made to make managing cookie consent state easier in a the Re
 
 The hook in this repository will provide a way to manage these types of cookies.
 
+## Installation
+
+This package can be easily installed using `npm`:
+
+```bash
+npm i use-cookie-consent
+```
+
+Or `yarn`:
+
+```bash
+yarn add use-cookie-consent
+```
+
 ## Usage
 
 ```tsx
