@@ -1,13 +1,14 @@
 {
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
-    "module": "es2015",
-    "target": "es5",
+    "module": "ESNext",
+    "target": "ES5",
     "moduleResolution": "node",
+    "strict": true,
     "declaration": true,
     "rootDir": ".",
     "outDir": "build",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "lib": ["es2016", "dom", "es5"]
   },
   "include": ["src/**/*.ts", "test/**/*.ts"],
