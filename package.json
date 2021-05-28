@@ -1,10 +1,11 @@
 {
   "name": "use-cookie-consent",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React hook for managing GDPR cookie consent state.",
-  "main": "index.js",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "jest --passWithNoTests",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
@@ -39,14 +40,18 @@
     "react-dom": ">=17.0.2"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "@types/js-cookie": "^2.2.6",
     "@types/node": "^14.11.2",
     "@types/react": "^17.0.8",
     "@types/react-dom": "^17.0.5",
     "gts": "^3.1.0",
+    "jest": "^27.0.1",
+    "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "typescript": "^4.3.2"
+    "ts-jest": "^27.0.1",
+    "typescript": "^4.2"
   },
   "dependencies": {
     "js-cookie": "^2.2.1"
