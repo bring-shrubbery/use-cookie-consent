@@ -1,19 +1,23 @@
 {
   "name": "use-cookie-consent",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React hook for managing GDPR cookie consent state.",
-  "main": "build/src/index.js",
-  "types": "build/src/index.d.ts",
+  "main": "./build/cjs/index.js",
+  "types": "./build/cjs/index.d.ts",
+  "module": "./build/esm/index.js",
+  "files": [
+    "build/"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests",
     "lint": "gts lint",
-    "clean": "gts clean",
-    "compile": "tsc",
+    "clean": "rimraf build",
+    "compile:esm": "tsc -p tsconfig.esm.json",
+    "compile:cjs": "tsc -p tsconfig.cjs.json",
     "fix": "gts fix",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
+    "prepare": "npm run build",
     "posttest": "npm run lint",
-    "build": "npm run compile"
+    "build": "npm run compile:esm && npm run compile:cjs"
   },
   "keywords": [
     "gdpr",
@@ -30,7 +34,7 @@
     "url": "https://github.com/bring-shrubbery/use-cookie-consent/issues"
   },
   "author": {
-    "name": "Antoni Silvestrovic",
+    "name": "Antoni Silvestrovič",
     "email": "antoni.silvestrovic@gmail.com",
     "url": "http://antoni.ai/"
   },
@@ -50,6 +54,7 @@
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.0.1",
     "typescript": "^4.2"
   },
