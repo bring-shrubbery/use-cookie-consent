@@ -1,8 +1,8 @@
-import {CookieTypes, SetCookieProps} from './types';
+import {CookieConsent, SetCookieProps} from './types';
 
 export const allCookiesSetToValue = (
   value: boolean
-): Required<CookieTypes> => ({
+): Required<CookieConsent> => ({
   session: value,
   persistent: value,
   necessary: true, // Necessary cookies are necessary, thus should stay active.
@@ -15,7 +15,7 @@ export const allCookiesSetToValue = (
 
 export const allPropsApproved = (
   props: SetCookieProps,
-  consent?: CookieTypes
+  consent?: CookieConsent
 ): boolean => {
   if (!consent) return false;
   if (!consent[props.duration]) return false;

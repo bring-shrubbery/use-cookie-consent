@@ -2,21 +2,21 @@ import {useState, useEffect} from 'react';
 import * as Cookies from 'js-cookie';
 import {COOKIE_CONSENT_KEY, EMPTY_CONSENT} from './constants';
 import {
+  CookieConsent,
   CookieConsentHookState,
   CookieConsentOptions,
-  CookieTypes,
   CookieWrapper,
+  DidDeclineAllHandler,
 } from './types';
 import {allCookiesSetToValue, allPropsApproved} from './utils';
 
 export const useCookieConsent = (
   options?: CookieConsentOptions
 ): CookieConsentHookState => {
-  const initialConsent = Cookies.getJSON(COOKIE_CONSENT_KEY) as
-    | CookieTypes
-    | undefined;
+  const initialConsent: CookieConsent =
+    Cookies.getJSON(COOKIE_CONSENT_KEY) ?? EMPTY_CONSENT;
 
-  const [consent, setConsent] = useState<CookieTypes | undefined>(
+  const [consent, setConsent] = useState<CookieConsent | undefined>(
     initialConsent || options?.defaultConsent
   );
 
@@ -30,8 +30,8 @@ export const useCookieConsent = (
     }
   }, [consent]);
 
-  const acceptCookies = (cookies: CookieTypes) => {
-    setConsent(cookies);
+  const acceptCookies = (newConsent: CookieConsent) => {
+    setConsent(newConsent);
   };
 
   const declineAllCookies = () => {
@@ -40,6 +40,23 @@ export const useCookieConsent = (
 
   const acceptAllCookies = () => {
     setConsent(allCookiesSetToValue(true));
+  };
+
+  const didAcceptAll = (): boolean => {
+    const consentKeyArray = Object.keys(consent) as (keyof CookieConsent)[];
+
+    return consentKeyArray.reduce<boolean>((prev, key) => {
+      return prev && consent[key];
+    }, true);
+  };
+
+  const didDeclineAll: DidDeclineAllHandler = opts => {
+    const consentKeyArray = Object.keys(consent) as (keyof CookieConsent)[];
+
+    return consentKeyArray.reduce<boolean>((prev, key) => {
+      if (!opts?.includingNecessary && key === 'necessary') return prev;
+      return prev && !consent[key];
+    }, true);
   };
 
   const cookieWrapper: CookieWrapper = {
@@ -55,10 +72,12 @@ export const useCookieConsent = (
   };
 
   return {
-    consent: consent ?? EMPTY_CONSENT,
+    consent: consent,
     acceptCookies,
     declineAllCookies,
     acceptAllCookies,
+    didAcceptAll,
+    didDeclineAll,
     cookies: cookieWrapper,
   };
 };

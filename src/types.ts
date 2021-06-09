@@ -19,7 +19,7 @@ export interface ProvenanceCookieTypes {
   thirdParty?: boolean;
 }
 
-export type CookieTypes = PurposeCookieTypes &
+type CookieTypes = PurposeCookieTypes &
   DurationCookieTypes &
   ProvenanceCookieTypes;
 
@@ -53,18 +53,26 @@ export interface CookieWrapper {
   remove: (name: string, options?: CookieAttributes) => void;
 }
 
+export type DidDeclineAllHandler = (opts?: {
+  includingNecessary: boolean;
+}) => boolean;
+
 export interface CookieConsentHookActions {
   acceptCookies: (cookies: CookieTypes) => void;
   declineAllCookies: () => void;
   acceptAllCookies: () => void;
+  didAcceptAll: () => boolean;
+  didDeclineAll: DidDeclineAllHandler;
   cookies: CookieWrapper;
 }
 
+export type CookieConsent = CookieTypes;
+
 export interface CookieConsentHookState extends CookieConsentHookActions {
-  consent: CookieTypes;
+  consent: CookieConsent;
 }
 
 export interface CookieConsentOptions {
-  defaultConsent?: CookieTypes;
+  defaultConsent?: CookieConsent;
   consentCookieAttributes?: CookieAttributes;
 }
