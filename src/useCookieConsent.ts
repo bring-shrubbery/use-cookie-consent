@@ -16,7 +16,7 @@ export const useCookieConsent = (
   const initialConsent: CookieConsent =
     Cookies.getJSON(COOKIE_CONSENT_KEY) ?? EMPTY_CONSENT;
 
-  const [consent, setConsent] = useState<CookieConsent | undefined>(
+  const [consent, setConsent] = useState<CookieConsent>(
     initialConsent || options?.defaultConsent
   );
 
@@ -43,19 +43,20 @@ export const useCookieConsent = (
   };
 
   const didAcceptAll = (): boolean => {
-    const consentKeyArray = Object.keys(consent) as (keyof CookieConsent)[];
+    const keyArray = Object.keys(consent || {}) as (keyof CookieConsent)[];
 
-    return consentKeyArray.reduce<boolean>((prev, key) => {
-      return prev && consent[key];
-    }, true);
+    return keyArray.reduce<boolean>(
+      (prev, key) => (prev && consent && consent[key]) || false,
+      true
+    );
   };
 
   const didDeclineAll: DidDeclineAllHandler = opts => {
-    const consentKeyArray = Object.keys(consent) as (keyof CookieConsent)[];
+    const keyArray = Object.keys(consent || {}) as (keyof CookieConsent)[];
 
-    return consentKeyArray.reduce<boolean>((prev, key) => {
+    return keyArray.reduce<boolean>((prev, key): boolean => {
       if (!opts?.includingNecessary && key === 'necessary') return prev;
-      return prev && !consent[key];
+      return (prev && consent && !consent[key]) || false;
     }, true);
   };
 
@@ -72,7 +73,7 @@ export const useCookieConsent = (
   };
 
   return {
-    consent: consent,
+    consent,
     acceptCookies,
     declineAllCookies,
     acceptAllCookies,
