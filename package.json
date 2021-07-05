@@ -17,7 +17,8 @@
     "fix": "gts fix",
     "prepare": "npm run build",
     "posttest": "npm run lint",
-    "build": "npm run compile:esm && npm run compile:cjs"
+    "build": "npm run compile:esm && npm run compile:cjs",
+    "coverage": "jest --ci --coverage"
   },
   "keywords": [
     "gdpr",
