@@ -15,4 +15,4 @@ README.md
 tsconfig.cjs.json
 tsconfig.esm.json
 coverage
-tests
+**/tests
