@@ -28,6 +28,7 @@ jobs:
       with:
         node-version: 14
         registry-url: https://npm.pkg.github.com/
+    - run: npm ci
     - name: Generate coverage report
       run: npm run coverage
     - name: Upload coverage to Codecov
