@@ -1,0 +1,17 @@
+.github
+node_modules
+Build
+.vscode
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc.js
+CODE_OF_CONDUCT.md
+jest.config.js
+LICENSE
+package-lock.json
+package.json
+README.md
+tsconfig.cjs.json
+tsconfig.esm.json
+coverage
