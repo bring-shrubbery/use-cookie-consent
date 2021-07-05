@@ -3,6 +3,7 @@
 ![Build](https://img.shields.io/github/checks-status/bring-shrubbery/use-cookie-consent/main)
 ![NPM Version](https://img.shields.io/npm/v/use-cookie-consent)
 ![Coverage](https://img.shields.io/codecov/c/github/bring-shrubbery/use-cookie-consent)
+![Lines of code](https://img.shields.io/tokei/lines/github/bring-shrubbery/use-cookie-consent)
 ![License](https://img.shields.io/npm/l/use-cookie-consent)
 
 ## Disclaimer
