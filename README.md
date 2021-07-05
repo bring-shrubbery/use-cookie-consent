@@ -1,10 +1,10 @@
 # useCookieConsent
 
-![Build](https://img.shields.io/github/checks-status/bring-shrubbery/use-cookie-consent/main)
-![NPM Version](https://img.shields.io/npm/v/use-cookie-consent)
-![Coverage](https://img.shields.io/codecov/c/github/bring-shrubbery/use-cookie-consent)
+[![Build](https://img.shields.io/github/checks-status/bring-shrubbery/use-cookie-consent/main)](https://github.com/bring-shrubbery/use-cookie-consent/actions)
+[![NPM Version](https://img.shields.io/npm/v/use-cookie-consent)](https://www.npmjs.com/package/use-cookie-consent)
+[![Codecov](https://github.com/bring-shrubbery/use-cookie-consent/actions/workflows/codecov.yml/badge.svg)](https://github.com/bring-shrubbery/use-cookie-consent/actions/workflows/codecov.yml)
 ![Lines of code](https://img.shields.io/tokei/lines/github/bring-shrubbery/use-cookie-consent)
-![License](https://img.shields.io/npm/l/use-cookie-consent)
+[![License](https://img.shields.io/npm/l/use-cookie-consent)](https://github.com/bring-shrubbery/use-cookie-consent/blob/main/LICENSE)
 
 ## Disclaimer
 
