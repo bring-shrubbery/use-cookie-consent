@@ -73,9 +73,51 @@ export const YourComponent = () => {
 };
 ```
 
-## Author
+## API
 
-[Antoni Silvestrovic](https://github.com/bring-shrubbery)
+### `useCookieConsent(options)`
+
+`useCookieConsent` is the main hook in this library. You call it whenever you need to accept, decline, set or get cookies - so anything to do with cookies.
+
+```ts
+useCookieConsent({
+  defaultConsent?: CookieConsent,
+  consentCookieAttributes?: CookieAttributes;
+})
+```
+
+This hook function returns following object:
+
+```ts
+{
+  consent: {
+    session?: boolean;
+    persistent?: boolean;
+    necessary?: boolean;
+    preferences?: boolean;
+    statistics?: boolean;
+    marketing?: boolean;
+    firstParty?: boolean;
+    thirdParty?: boolean;
+  };
+  acceptCookies: (cookies: CookieTypes) => void;
+  declineAllCookies: () => void;
+  acceptAllCookies: () => void;
+  didAcceptAll: () => boolean;
+  didDeclineAll: (opts?: CookieDeclineOptions) => boolean;
+  cookies: CookieWrapper;
+}
+```
+
+## Acknowledgements
+
+Following package was used as a starter for this project:
+
+- [easy-npm-package-react](https://github.com/bring-shrubbery/easy-npm-package-react)
+
+## Contributors
+
+- [Antoni Silvestrovic (author)](https://github.com/bring-shrubbery)
 
 ## License
 
