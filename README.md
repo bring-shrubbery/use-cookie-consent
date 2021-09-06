@@ -109,6 +109,13 @@ This hook function returns following object:
 }
 ```
 
+## Roadmap
+
+- [ ] Add support for Storage API
+- [ ] Add support for custom cookie categories
+- [ ] Create documentation website
+- [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?)
+
 ## Acknowledgements
 
 Following package was used as a starter for this project:
