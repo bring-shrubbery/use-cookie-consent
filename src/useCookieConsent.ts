@@ -14,11 +14,11 @@ export const useCookieConsent = (
   options?: CookieConsentOptions
 ): CookieConsentHookState => {
   const initialConsent: CookieConsent =
-    Cookies.getJSON(COOKIE_CONSENT_KEY) ?? EMPTY_CONSENT;
+    Cookies.getJSON(COOKIE_CONSENT_KEY) ||
+    options?.defaultConsent ||
+    EMPTY_CONSENT;
 
-  const [consent, setConsent] = useState<CookieConsent>(
-    initialConsent || options?.defaultConsent
-  );
+  const [consent, setConsent] = useState<CookieConsent>(initialConsent);
 
   useEffect(() => {
     if (consent?.necessary) {
