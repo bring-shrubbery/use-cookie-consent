@@ -66,6 +66,44 @@ describe('hook tests', () => {
     });
   });
 
+  describe('hook options', () => {
+    it('should have defaultConsent option persist for initial value, but not after updating', async () => {
+      const {result} = renderHook(() =>
+        useCookieConsent({
+          defaultConsent: {
+            session: true,
+            persistent: true,
+            necessary: true,
+            preferences: true,
+            statistics: true,
+            marketing: true,
+            firstParty: true,
+            thirdParty: true,
+          },
+        })
+      );
+
+      expect(result.current.consent.session).toBeTruthy();
+      expect(result.current.consent.persistent).toBeTruthy();
+      expect(result.current.consent.necessary).toBeTruthy();
+      expect(result.current.consent.preferences).toBeTruthy();
+      expect(result.current.consent.statistics).toBeTruthy();
+      expect(result.current.consent.marketing).toBeTruthy();
+      expect(result.current.consent.firstParty).toBeTruthy();
+      expect(result.current.consent.thirdParty).toBeTruthy();
+
+      act(() => result.current.declineAllCookies());
+
+      expect(result.current.consent.session).toBeFalsy();
+      expect(result.current.consent.persistent).toBeFalsy();
+      expect(result.current.consent.preferences).toBeFalsy();
+      expect(result.current.consent.statistics).toBeFalsy();
+      expect(result.current.consent.marketing).toBeFalsy();
+      expect(result.current.consent.firstParty).toBeFalsy();
+      expect(result.current.consent.thirdParty).toBeFalsy();
+    });
+  });
+
   // TODO: Implement purpose cookie tests
 
   // TODO: Test cookie wrapper or even better, allow providing own storage wrapper in the hook.
