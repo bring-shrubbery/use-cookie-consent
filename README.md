@@ -109,8 +109,9 @@ This hook function returns following object:
 }
 ```
 
-## Roadmap
+## Roadmap to v1
 
+- [ ] Add package bundler ([webpack](https://webpack.js.org/) or [rollup](https://rollupjs.org/))
 - [ ] Add support for Storage API
 - [ ] Add support for custom cookie categories
 - [ ] Create documentation website
