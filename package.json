@@ -1,6 +1,6 @@
 {
-  "name": "@bring-shrubbery/use-cookie-consent",
-  "version": "0.1.17",
+  "name": "use-cookie-consent",
+  "version": "0.1.18",
   "description": "React hook for managing GDPR cookie consent state.",
   "main": "./build/cjs/index.js",
   "types": "./build/cjs/index.d.ts",
