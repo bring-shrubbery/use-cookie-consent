@@ -1,6 +1,6 @@
 {
-  "name": "use-cookie-consent",
-  "version": "0.1.15",
+  "name": "@bring-shrubbery/use-cookie-consent",
+  "version": "0.1.16",
   "description": "React hook for managing GDPR cookie consent state.",
   "main": "./build/cjs/index.js",
   "types": "./build/cjs/index.d.ts",
@@ -31,6 +31,9 @@
     "type": "git",
     "url": "git+https://github.com/bring-shrubbery/use-cookie-consent"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "bugs": {
     "url": "https://github.com/bring-shrubbery/use-cookie-consent/issues"
   },
@@ -45,16 +48,16 @@
     "react-dom": "^16.9 || ^17"
   },
   "devDependencies": {
-    "@testing-library/react": "^12.1.0",
+    "@testing-library/react": "^12.1.1",
     "@testing-library/react-hooks": "^7",
-    "@types/jest": "^27.0.1",
+    "@types/jest": "^27.0.2",
     "@types/js-cookie": "^2",
     "@types/node": "^14",
-    "@types/react": "^17.0.20",
+    "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "gts": "^3",
-    "jest": "^27",
-    "prettier": "^2",
+    "jest": "^27.2.3",
+    "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-test-renderer": "^17.0.2",
