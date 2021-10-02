@@ -15,7 +15,7 @@ Although code in this repository is oriented to satisfy GDPR cookie rules, neith
 
 ## Description
 
-This React hook is made to make managing cookie consent state easier in a the React hook world. It is following [this](https://gdpr.eu/cookies) GDPR cookie guide which describes what you need for GDPR compliance. This hook mainly focuses handling the consent state of the different types of cookies as described in "Types of Cookies" in [this](https://gdpr.eu/cookies) page. Summarizing the mentioned document, there are three different ways to classify cookies:
+This hook is made to make managing cookie consent state easier. Although it might seem like a React thing, it's framework agnostic, and if you want to have best experience with React.js you should use [this (not yet done)]() package. It is following [this](https://gdpr.eu/cookies) GDPR cookie guide which describes what you need for GDPR compliance. This hook mainly focuses handling the consent state of the different types of cookies as described in "Types of Cookies" in [this](https://gdpr.eu/cookies) page. Summarizing the mentioned document, there are three different ways to classify cookies:
 
 - Cookie Duration
   - Session cookies
@@ -36,19 +36,19 @@ The hook in this repository will provide a way to manage these types of cookies.
 This package can be easily installed using `npm`:
 
 ```bash
-npm i use-cookie-consent
+npm i @use-cookie-consent/core
 ```
 
 Or `yarn`:
 
 ```bash
-yarn add use-cookie-consent
+yarn add @use-cookie-consent/core
 ```
 
-## Usage
+## Usage in React
 
 ```tsx
-import {useCookieConsent} from 'use-cookie-consent';
+import {useCookieConsent} from '@use-cookie-consent/core';
 
 export const YourComponent = () => {
   const {consent, acceptAllCookies, declineAllCookies, acceptCookies} =
@@ -114,11 +114,12 @@ This hook function returns following object:
 
 ## Roadmap to v1
 
-- [ ] Add package bundler ([webpack](https://webpack.js.org/) or [rollup](https://rollupjs.org/))
-- [ ] Add support for Storage API
-- [ ] Add support for custom cookie categories
-- [ ] Create documentation website
-- [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?)
+- [ ] Add package bundler ([webpack](https://webpack.js.org/) or [rollup](https://rollupjs.org/)).
+- [ ] Add support for Storage API.
+- [ ] Add support for custom cookie categories.
+- [ ] Create documentation website.
+- [ ] Create supporting library packages.
+- [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?).
 
 ## Acknowledgements
 
