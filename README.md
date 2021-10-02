@@ -1,11 +1,11 @@
 # use-cookie-consent-core
 
-[![Build](https://img.shields.io/github/checks-status/bring-shrubbery/use-cookie-consent/main)](https://github.com/bring-shrubbery/use-cookie-consent/actions)
-[![NPM Version](https://img.shields.io/npm/v/use-cookie-consent)](https://www.npmjs.com/package/use-cookie-consent)
-[![NPM Downloads](https://img.shields.io/npm/dm/use-cookie-consent)](https://www.npmjs.com/package/use-cookie-consent)
-[![Codecov](https://img.shields.io/codecov/c/github/bring-shrubbery/use-cookie-consent)](https://github.com/bring-shrubbery/use-cookie-consent/actions/workflows/codecov.yml)
-![Lines of code](https://img.shields.io/tokei/lines/github/bring-shrubbery/use-cookie-consent)
-[![License](https://img.shields.io/npm/l/use-cookie-consent)](https://github.com/bring-shrubbery/use-cookie-consent/blob/main/LICENSE)
+[![Build](https://img.shields.io/github/checks-status/use-cookie-consent/use-cookie-consent-core/main)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions)
+[![NPM Version](https://img.shields.io/npm/v/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
+[![NPM Downloads](https://img.shields.io/npm/dm/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
+[![Codecov](https://img.shields.io/codecov/c/github/use-cookie-consent/use-cookie-consent-core)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions/workflows/codecov.yml)
+![Lines of code](https://img.shields.io/tokei/lines/github/use-cookie-consent/use-cookie-consent-core)
+[![License](https://img.shields.io/npm/l/@use-cookie-consent/core)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
 
 > :warning: **This repository was transferred**: As part of the roadmap for a major release, the repository was transferred to an organisation for easier scoping or library specific packages.
 
