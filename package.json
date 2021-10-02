@@ -26,13 +26,13 @@
     "react hooks",
     "react"
   ],
-  "homepage": "https://github.com/bring-shrubbery/use-cookie-consent",
+  "homepage": "https://github.com/use-cookie-consent/use-cookie-consent-core",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bring-shrubbery/use-cookie-consent"
+    "url": "git+https://github.com/use-cookie-consent/use-cookie-consent-core"
   },
   "bugs": {
-    "url": "https://github.com/bring-shrubbery/use-cookie-consent/issues"
+    "url": "https://github.com/use-cookie-consent/use-cookie-consent-core/issues"
   },
   "author": {
     "name": "Antoni Silvestrovič",
