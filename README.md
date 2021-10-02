@@ -1,4 +1,4 @@
-# useCookieConsent
+# use-cookie-consent-core
 
 [![Build](https://img.shields.io/github/checks-status/bring-shrubbery/use-cookie-consent/main)](https://github.com/bring-shrubbery/use-cookie-consent/actions)
 [![NPM Version](https://img.shields.io/npm/v/use-cookie-consent)](https://www.npmjs.com/package/use-cookie-consent)
