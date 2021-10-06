@@ -15,7 +15,9 @@ Although code in this repository is oriented to satisfy GDPR cookie rules, neith
 
 ## Description
 
-This hook is made to make managing cookie consent state easier. Although it might seem like a React thing, it's framework agnostic, and if you want to have best experience with React.js you should use [this (not yet done)]() package. It is following [this](https://gdpr.eu/cookies) GDPR cookie guide which describes what you need for GDPR compliance. This hook mainly focuses handling the consent state of the different types of cookies as described in "Types of Cookies" in [this](https://gdpr.eu/cookies) page. Summarizing the mentioned document, there are three different ways to classify cookies:
+This hook is made to make managing cookie consent state easier. Although it might seem like a React thing, it's framework agnostic, and if you want to have best experience with React.js you should use [this (not yet finished)](https://github.com/use-cookie-consent/use-cookie-consent-react) package.
+
+This package is following [this](https://gdpr.eu/cookies) GDPR cookie guide which describes what you need for GDPR compliance. This hook mainly focuses handling the consent state of the different types of cookies as described in "Types of Cookies" in [this](https://gdpr.eu/cookies) page. Summarizing the mentioned document, there are three different ways to classify cookies:
 
 - Cookie Duration
   - Session cookies
