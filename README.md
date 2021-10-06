@@ -1,4 +1,4 @@
-# use-cookie-consent-core
+# useCookieConsent hook for pure JavaScript projects
 
 [![Build](https://img.shields.io/github/checks-status/use-cookie-consent/use-cookie-consent-core/main)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions)
 [![NPM Version](https://img.shields.io/npm/v/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
@@ -7,9 +7,7 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/use-cookie-consent/use-cookie-consent-core)
 [![License](https://img.shields.io/npm/l/@use-cookie-consent/core)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
 
-> :warning: **This repository was transferred**: As part of the roadmap for a major release, the repository was transferred to an organisation for easier scoping or library specific packages.
-
-## Disclaimer
+## :warning: Disclaimer
 
 Although code in this repository is oriented to satisfy GDPR cookie rules, neither author nor contributors to this repository will be responsible for any non-compliance with the law. Please make sure that this repository provides all the functionality to satisfy requirements for your project. If you find something that can be improved please create an issue or send a PR with your fixes!
 
