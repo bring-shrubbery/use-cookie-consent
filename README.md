@@ -9,7 +9,7 @@
 
 ## Library-specific packages
 
-This repo is make to be UI library agnostic, so you can use it in any JavaScript project. Below you can see all the library-specific we support:
+This repo is make to be UI library agnostic, so you can use it in any JavaScript project. Below you can see all the library-specific packages we maintain:
 
 - [React](https://github.com/use-cookie-consent/use-cookie-consent-react)
 
