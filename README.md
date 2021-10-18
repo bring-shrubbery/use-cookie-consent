@@ -114,12 +114,15 @@ This hook function returns following object:
 
 ## Roadmap to v1
 
-- [ ] Add package bundler ([webpack](https://webpack.js.org/) or [rollup](https://rollupjs.org/)).
-- [ ] Add support for Storage API.
-- [ ] Add support for custom cookie categories.
-- [ ] Create documentation website.
-- [ ] Create supporting library packages.
-- [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?).
+- [ ] Add package bundler ([webpack](https://webpack.js.org/) or [rollup](https://rollupjs.org/))
+- [ ] Add support for Storage API
+- [ ] Add support for custom cookie categories
+- [ ] Create documentation website
+- [ ] Create supporting library packages
+  - [x] React
+  - [ ] Vue
+  - [ ] Svelte
+- [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?)
 
 ## Acknowledgements
 
