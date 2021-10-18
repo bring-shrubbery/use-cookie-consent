@@ -7,13 +7,13 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/use-cookie-consent/use-cookie-consent-core)
 [![License](https://img.shields.io/npm/l/@use-cookie-consent/core)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
 
-## :warning: Disclaimer
+## Library-specific packages
 
-Although code in this repository is oriented to satisfy GDPR cookie rules, neither author nor contributors to this repository will be responsible for any non-compliance with the law. Please make sure that this repository provides all the functionality to satisfy requirements for your project. If you find something that can be improved please create an issue or send a PR with your fixes!
+This repo is make to be UI library agnostic, so you can use it in any JavaScript project. Below you can see all the library-specific we support:
+
+- [React](https://github.com/use-cookie-consent/use-cookie-consent-react)
 
 ## Description
-
-This hook is made to make managing cookie consent state easier. Although it might seem like a React thing, it's framework agnostic, and if you want to have best experience with React.js you should use [this (not yet finished)](https://github.com/use-cookie-consent/use-cookie-consent-react) package.
 
 This package is following [this](https://gdpr.eu/cookies) GDPR cookie guide which describes what you need for GDPR compliance. This hook mainly focuses handling the consent state of the different types of cookies as described in "Types of Cookies" in [this](https://gdpr.eu/cookies) page. Summarizing the mentioned document, there are three different ways to classify cookies:
 
@@ -33,13 +33,13 @@ The hook in this repository will provide a way to manage these types of cookies.
 
 ## Installation
 
-This package can be easily installed using `npm`:
+Using `npm`:
 
 ```bash
 npm i @use-cookie-consent/core
 ```
 
-Or `yarn`:
+Using `yarn`:
 
 ```bash
 yarn add @use-cookie-consent/core
