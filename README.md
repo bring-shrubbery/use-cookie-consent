@@ -10,7 +10,7 @@
 > Headless state management for GDPR cookie consent
 
 - **Headless** - bring your own styles, we will provide the logic.
-- **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application
+- **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application.
 
 ## Library-specific packages
 
