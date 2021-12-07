@@ -7,6 +7,11 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/use-cookie-consent/use-cookie-consent-core)
 [![License](https://img.shields.io/npm/l/@use-cookie-consent/core)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
 
+> Headless state management for GDPR cookie consent
+
+- **Headless** - bring your own styles, we will provide the logic.
+- **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application
+
 ## Library-specific packages
 
 This repo is make to be UI library agnostic, so you can use it in any JavaScript project. Below you can see all the library-specific packages we maintain:
@@ -114,14 +119,14 @@ This hook function returns following object:
 
 ## Roadmap to v1
 
-- [ ] Add package bundler ([webpack](https://webpack.js.org/) or [rollup](https://rollupjs.org/))
+- [ ] Add package bundler ([webpack](https://webpack.js.org/), [rollup](https://rollupjs.org/), [swc/spack](https://swc.rs/docs/configuration/bundling))
 - [ ] Add support for Storage API
 - [ ] Add support for custom cookie categories
 - [ ] Create documentation website
 - [ ] Create supporting library packages
-  - [x] React
-  - [ ] Vue
-  - [ ] Svelte
+  - [x] React [here](https://github.com/use-cookie-consent/use-cookie-consent-react)
+  - [ ] Vue (planned)
+  - [ ] Svelte (planned)
 - [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?)
 
 ## Acknowledgements
