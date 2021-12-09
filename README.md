@@ -1,6 +1,6 @@
 # useCookieConsent hook for pure JavaScript projects
 
-[![Build](https://img.shields.io/github/checks-status/use-cookie-consent/use-cookie-consent-core)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions)
+[![Build](https://img.shields.io/github/checks-status/use-cookie-consent/use-cookie-consent-core/main)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions)
 [![NPM Version](https://img.shields.io/npm/v/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
 [![NPM Downloads](https://img.shields.io/npm/dm/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
 [![Codecov](https://img.shields.io/codecov/c/github/use-cookie-consent/use-cookie-consent-core)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions/workflows/codecov.yml)
