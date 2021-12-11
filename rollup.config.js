@@ -2,7 +2,8 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
+import gzipPlugin from 'rollup-plugin-gzip';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJson = require('./package.json');
@@ -26,6 +27,7 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    uglify(),
+    terser(),
+    gzipPlugin(),
   ],
 };
