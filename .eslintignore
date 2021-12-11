@@ -1,1 +1,8 @@
-build/
+node_modules
+build
+.vscode
+.storybook
+.github
+jest.config.js
+jest.setup.js
+.prettierrc.js

@@ -1,4 +1,4 @@
-import {CookieConsent, SetCookieProps} from './types';
+import { CookieConsent, SetCookieProps } from './types';
 
 export const allCookiesSetToValue = (
   value: boolean
