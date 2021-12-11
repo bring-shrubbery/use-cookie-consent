@@ -11,7 +11,7 @@
 
 - **Headless** - bring your own styles, we will provide the logic.
 - **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application.
-- **Small** - Just under `1.5kb` gzipped.
+- **Small** - Just under `1.5kB` gzipped.
 
 ## Library-specific packages
 
