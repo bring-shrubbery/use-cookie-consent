@@ -1,9 +1,9 @@
 {
   "name": "@use-cookie-consent/core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "React hook for managing GDPR cookie consent state.",
   "main": "./build/cjs/index.js",
-  "types": "./build/cjs/index.d.ts",
+  "types": "./build/index.d.ts",
   "module": "./build/esm/index.js",
   "files": [
     "build"
