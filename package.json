@@ -8,6 +8,11 @@
   "files": [
     "build"
   ],
+  "engines": {
+    "node": ">=12",
+    "npm": "<0",
+    "yarn": "^1"
+  },
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "clean": "rimraf build",
