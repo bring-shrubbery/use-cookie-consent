@@ -122,7 +122,7 @@ This hook function returns following object:
 - [ ] Add package bundler ([webpack](https://webpack.js.org/), [rollup](https://rollupjs.org/), [swc/spack](https://swc.rs/docs/configuration/bundling))
 - [ ] Add support for Storage API
 - [ ] Add support for custom cookie categories
-- [ ] Create documentation website
+- [x] Create documentation website [here](https://use-cookie-consent.js.org/)
 - [ ] Create supporting library packages
   - [x] React [here](https://github.com/use-cookie-consent/use-cookie-consent-react)
   - [ ] Vue (planned)
