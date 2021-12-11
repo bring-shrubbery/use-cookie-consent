@@ -4,13 +4,14 @@
 [![NPM Version](https://img.shields.io/npm/v/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
 [![NPM Downloads](https://img.shields.io/npm/dm/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
 [![Codecov](https://img.shields.io/codecov/c/github/use-cookie-consent/use-cookie-consent-core)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions/workflows/codecov.yml)
-![Lines of code](https://img.shields.io/tokei/lines/github/use-cookie-consent/use-cookie-consent-core)
+[![gzipped size](https://img.badgesize.io/https:/unpkg.com/@use-cookie-consent/core@latest/build/esm/index.js?label=gzipped&compression=gzip&style=flat-square)](https://unpkg.com/@use-cookie-consent/core@latest/build/esm/index.js)
 [![License](https://img.shields.io/npm/l/@use-cookie-consent/core)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
 
 > Headless state management for GDPR cookie consent
 
 - **Headless** - bring your own styles, we will provide the logic.
 - **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application.
+- **Small** - Just under `1.5kb` gzipped.
 
 ## Library-specific packages
 
@@ -53,10 +54,10 @@ yarn add @use-cookie-consent/core
 ## Usage in React
 
 ```tsx
-import {useCookieConsent} from '@use-cookie-consent/core';
+import { useCookieConsent } from '@use-cookie-consent/core';
 
 export const YourComponent = () => {
-  const {consent, acceptAllCookies, declineAllCookies, acceptCookies} =
+  const { consent, acceptAllCookies, declineAllCookies, acceptCookies } =
     useCookieConsent();
 
   return (
@@ -69,10 +70,10 @@ export const YourComponent = () => {
       </h3>
 
       <button onClick={acceptAllCookies}>Accept all</button>
-      <button onClick={() => acceptCookies({thirdParty: true})}>
+      <button onClick={() => acceptCookies({ thirdParty: true })}>
         Accept third-party
       </button>
-      <button onClick={() => acceptCookies({firstParty: true})}>
+      <button onClick={() => acceptCookies({ firstParty: true })}>
         Accept first-party
       </button>
       <button onClick={declineAllCookies}>Reject all</button>
