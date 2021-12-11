@@ -1,4 +1,4 @@
-import {allCookiesSetToValue, allPropsApproved} from '../utils';
+import { allCookiesSetToValue, allPropsApproved } from '../utils';
 
 describe('utilities', () => {
   it('should correctly set all cookies to a true', () => {
@@ -11,7 +11,7 @@ describe('utilities', () => {
   });
 
   it('should correctly set all cookies to a false', () => {
-    const {necessary, ...all} = allCookiesSetToValue(false);
+    const { necessary, ...all } = allCookiesSetToValue(false);
     const reducedResult = Object.values(all).reduce(
       (prev, curr) => prev || curr,
       false

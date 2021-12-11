@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import * as Cookies from 'js-cookie';
-import {COOKIE_CONSENT_KEY, EMPTY_CONSENT} from './constants';
+import { COOKIE_CONSENT_KEY, EMPTY_CONSENT } from './constants';
 import {
   CookieConsent,
   CookieConsentHookState,
@@ -8,7 +8,7 @@ import {
   CookieWrapper,
   DidDeclineAllHandler,
 } from './types';
-import {allCookiesSetToValue, allPropsApproved} from './utils';
+import { allCookiesSetToValue, allPropsApproved } from './utils';
 
 export const useCookieConsent = (
   options?: CookieConsentOptions
@@ -51,7 +51,7 @@ export const useCookieConsent = (
     );
   };
 
-  const didDeclineAll: DidDeclineAllHandler = opts => {
+  const didDeclineAll: DidDeclineAllHandler = (opts) => {
     const keyArray = Object.keys(consent || {}) as (keyof CookieConsent)[];
 
     return keyArray.reduce<boolean>((prev, key): boolean => {

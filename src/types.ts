@@ -1,6 +1,6 @@
 // Cookie Types
 
-import {CookieAttributes} from 'js-cookie';
+import { CookieAttributes } from 'js-cookie';
 
 export interface DurationCookieTypes {
   session?: boolean;
