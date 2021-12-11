@@ -3507,7 +3507,7 @@ rollup-plugin-typescript2@^0.31.1:
 
 rollup-plugin-uglify@^6.0.4:
   version "6.0.4"
-  resolved "https://registry.npmjs.org/rollup-plugin-uglify/-/rollup-plugin-uglify-6.0.4.tgz"
+  resolved "https://registry.npmjs.org/rollup-plugin-uglify/-/rollup-plugin-uglify-6.0.4.tgz#65a0959d91586627f1e46a7db966fd504ec6c4e6"
   integrity sha512-ddgqkH02klveu34TF0JqygPwZnsbhHVI6t8+hGTcYHngPkQb5MIHI0XiztXIN/d6V9j+efwHAqEL7LspSxQXGw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
