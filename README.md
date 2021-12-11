@@ -119,7 +119,7 @@ This hook function returns following object:
 
 ## Roadmap to v1
 
-- [ ] Add package bundler ([webpack](https://webpack.js.org/), [rollup](https://rollupjs.org/), [swc/spack](https://swc.rs/docs/configuration/bundling))
+- [x] Add package bundler ([rollup](https://rollupjs.org/) was added)
 - [ ] Add support for Storage API
 - [ ] Add support for custom cookie categories
 - [x] Create documentation website [here](https://use-cookie-consent.js.org/)
