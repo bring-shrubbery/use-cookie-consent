@@ -13,11 +13,15 @@
 - **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application.
 - **Small** - Just under `1.5kB` gzipped.
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/29360707/145967135-eafd0467-9dd4-4496-b5f6-df5e6c1f40ba.png" alt="carbon" width="700px" />
+</p>
+
 ## Library-specific packages
 
-This repo was made to be framework-agnostic, so you can use it in any JavaScript project. If you use one of the libraries below, you should use those pacakges for best experience:
+This repo was made to be framework-agnostic, so you can use it in any JavaScript project. If you use a UI library that we support, you should use the package for your library for best experience
 
-- [React](https://github.com/use-cookie-consent/use-cookie-consent-react)
+- [`@use-cookie-consent/react`](https://github.com/use-cookie-consent/use-cookie-consent-react)
 
 ## Description
 
