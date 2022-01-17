@@ -140,6 +140,10 @@ Following package was used as a starter for this project:
 
 - [easy-npm-package-react](https://github.com/bring-shrubbery/easy-npm-package-react)
 
+## Discussions and Questions
+
+For non-issues please consider joining our Discord [here](https://discord.gg/pa8epvzJbb)!
+
 ## Contributors
 
 - [Antoni Silvestrovic (author)](https://github.com/bring-shrubbery)
