@@ -143,6 +143,7 @@ This hook function returns following object:
 
 ## Roadmap to v1
 
+- [ ] Monorepo
 - [x] Add package bundler ([rollup](https://rollupjs.org/) was added)
 - [ ] Add support for Storage API
 - [ ] Add support for custom cookie categories
