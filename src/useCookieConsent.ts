@@ -31,7 +31,7 @@ export const useCookieConsent = (
   }, [consent]);
 
   const acceptCookies = (newConsent: CookieConsent) => {
-    setConsent(newConsent);
+    setConsent((currentConsent) => ({...currentConsent, ...newConsent}));
   };
 
   const declineAllCookies = () => {
