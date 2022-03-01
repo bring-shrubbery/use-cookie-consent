@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as Cookies from 'js-cookie';
-import { COOKIE_CONSENT_KEY, EMPTY_CONSENT } from './constants';
+import { COOKIE_CONSENT_KEY, DEFAULT_CONSENT } from './constants';
 import {
   CookieConsent,
   CookieConsentHookState,
@@ -16,7 +16,7 @@ export const useCookieConsent = (
   const initialConsent: CookieConsent =
     Cookies.getJSON(COOKIE_CONSENT_KEY) ||
     options?.defaultConsent ||
-    EMPTY_CONSENT;
+    DEFAULT_CONSENT;
 
   const [consent, setConsent] = useState<CookieConsent>(initialConsent);
 
