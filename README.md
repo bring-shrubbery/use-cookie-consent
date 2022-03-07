@@ -76,10 +76,10 @@ export const YourComponent = () => {
       </h3>
 
       <button onClick={acceptAllCookies}>Accept all</button>
-      <button onClick={() => acceptCookies({ thirdParty: true })}>
+      <button onClick={() => acceptCookies({ necessary: true, thirdParty: true })}>
         Accept third-party
       </button>
-      <button onClick={() => acceptCookies({ firstParty: true })}>
+      <button onClick={() => acceptCookies({ necessary: true, firstParty: true })}>
         Accept first-party
       </button>
       <button onClick={declineAllCookies}>Reject all</button>
@@ -87,6 +87,23 @@ export const YourComponent = () => {
   );
 };
 ```
+
+### With custom cookie attributes
+```tsx
+import { useCookieConsent } from '@use-cookie-consent/core';
+
+export const YourComponent = () => {
+  const { consent, acceptAllCookies, declineAllCookies, acceptCookies } = useCookieConsent({ 
+      consentCookieAttributes: { expires: 180  } // 180 days
+    }); 
+
+  return (
+    // ...
+  );
+};
+```
+
+Cookie attributes for the underlying js-cookie package, more info [here](https://github.com/js-cookie/js-cookie).
 
 ## API
 
@@ -126,6 +143,7 @@ This hook function returns following object:
 
 ## Roadmap to v1
 
+- [ ] Monorepo
 - [x] Add package bundler ([rollup](https://rollupjs.org/) was added)
 - [ ] Add support for Storage API
 - [ ] Add support for custom cookie categories

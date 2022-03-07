@@ -1,6 +1,6 @@
 {
   "name": "@use-cookie-consent/core",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "React hook for managing GDPR cookie consent state.",
   "main": "./build/cjs/index.js",
   "types": "./build/index.d.ts",
@@ -9,9 +9,7 @@
     "build"
   ],
   "engines": {
-    "node": ">=12",
-    "npm": "<0",
-    "yarn": "^1"
+    "node": ">=12"
   },
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
