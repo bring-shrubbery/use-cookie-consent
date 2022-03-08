@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import * as Cookies from 'js-cookie';
-import { COOKIE_CONSENT_KEY, EMPTY_CONSENT } from './constants';
+import { COOKIE_CONSENT_KEY, DEFAULT_CONSENT } from './constants';
 import {
   CookieConsent,
   CookieConsentHookState,
   CookieConsentOptions,
   CookieWrapper,
   DidDeclineAllHandler,
+  AcceptCookiesOptions,
 } from './types';
 import { allCookiesSetToValue, allPropsApproved } from './utils';
 
@@ -16,7 +17,7 @@ export const useCookieConsent = (
   const initialConsent: CookieConsent =
     Cookies.getJSON(COOKIE_CONSENT_KEY) ||
     options?.defaultConsent ||
-    EMPTY_CONSENT;
+    DEFAULT_CONSENT;
 
   const [consent, setConsent] = useState<CookieConsent>(initialConsent);
 
@@ -30,8 +31,12 @@ export const useCookieConsent = (
     }
   }, [consent]);
 
-  const acceptCookies = (newConsent: CookieConsent) => {
-    setConsent(newConsent);
+  const acceptCookies = (newConsent: CookieConsent, options?: AcceptCookiesOptions) => {
+    if (options?.allowChangingNecessary) {
+      setConsent(newConsent)
+    } else {
+      setConsent({...newConsent, necessary: true});
+    };
   };
 
   const declineAllCookies = () => {
