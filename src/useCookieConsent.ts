@@ -7,6 +7,7 @@ import {
   CookieConsentOptions,
   CookieWrapper,
   DidDeclineAllHandler,
+  AcceptCookiesOptions,
 } from './types';
 import { allCookiesSetToValue, allPropsApproved } from './utils';
 
@@ -30,8 +31,12 @@ export const useCookieConsent = (
     }
   }, [consent]);
 
-  const acceptCookies = (newConsent: CookieConsent) => {
-    setConsent((currentConsent) => ({...currentConsent, ...newConsent}));
+  const acceptCookies = (newConsent: CookieConsent, options?: AcceptCookiesOptions) => {
+    if (options?.allowChangingNecessary) {
+      setConsent(newConsent)
+    } else {
+      setConsent({...newConsent, necessary: true});
+    };
   };
 
   const declineAllCookies = () => {

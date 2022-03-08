@@ -76,3 +76,7 @@ export interface CookieConsentOptions {
   defaultConsent?: CookieConsent;
   consentCookieAttributes?: CookieAttributes;
 }
+
+export interface AcceptCookiesOptions {
+  allowChangingNecessary?: boolean;
+}
