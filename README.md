@@ -1,11 +1,11 @@
 # useCookieConsent hook for pure JavaScript projects
 
-[![Build](https://img.shields.io/github/checks-status/use-cookie-consent/use-cookie-consent-core/main)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions)
-[![NPM Version](https://img.shields.io/npm/v/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
-[![NPM Downloads](https://img.shields.io/npm/dm/@use-cookie-consent/core)](https://www.npmjs.com/package/@use-cookie-consent/core)
-[![Codecov](https://img.shields.io/codecov/c/github/use-cookie-consent/use-cookie-consent-core)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions/workflows/codecov.yml)
-[![gzipped size](https://img.badgesize.io/https:/unpkg.com/@use-cookie-consent/core@latest/build/esm/index.js?label=gzipped&compression=gzip&style=flat-square)](https://unpkg.com/@use-cookie-consent/core@latest/build/esm/index.js)
-[![License](https://img.shields.io/npm/l/@use-cookie-consent/core)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
+[![Build](https://img.shields.io/github/checks-status/use-cookie-consent/use-cookie-consent-core/main?style=flat&colorA=5C5C5C&colorB=000000)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions)
+[![NPM Version](https://img.shields.io/npm/v/@use-cookie-consent/core?style=flat&colorA=5C5C5C&colorB=000000)](https://www.npmjs.com/package/@use-cookie-consent/core)
+[![NPM Downloads](https://img.shields.io/npm/dm/@use-cookie-consent/core?style=flat&colorA=5C5C5C&colorB=000000)](https://www.npmjs.com/package/@use-cookie-consent/core)
+[![Codecov](https://img.shields.io/codecov/c/github/use-cookie-consent/use-cookie-consent-core?style=flat&colorA=5C5C5C&colorB=000000)](https://github.com/use-cookie-consent/use-cookie-consent-core/actions/workflows/codecov.yml)
+[![gzipped size](https://img.badgesize.io/https:/unpkg.com/@use-cookie-consent/core@latest/build/esm/index.js?label=gzipped&compression=gzip&style=flat&color=000000)](https://unpkg.com/@use-cookie-consent/core@latest/build/esm/index.js)
+[![License](https://img.shields.io/npm/l/@use-cookie-consent/core?style=flat&colorA=5C5C5C&color=000000)](https://github.com/use-cookie-consent/use-cookie-consent-core/blob/main/LICENSE)
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bring.shrubbery)
 
