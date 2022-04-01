@@ -13,7 +13,7 @@
 
 - **Headless** - bring your own styles, we will provide the logic.
 - **Hook-based** - extremely intuitive for React developers, but can be used in any JavaScript application.
-- **Small** - Just under `1.5kB` gzipped.
+- **Small** - Less than `2kB` gzipped.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/29360707/145967135-eafd0467-9dd4-4496-b5f6-df5e6c1f40ba.png" alt="carbon" width="700px" />
