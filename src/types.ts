@@ -58,7 +58,7 @@ export type DidDeclineAllHandler = (opts?: {
 }) => boolean;
 
 export interface CookieConsentHookActions {
-  acceptCookies: (cookies: CookieTypes) => void;
+  acceptCookies: (cookies: CookieTypes, options?: AcceptCookiesOptions) => void;
   declineAllCookies: () => void;
   acceptAllCookies: () => void;
   didAcceptAll: () => boolean;
