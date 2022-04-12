@@ -31,12 +31,21 @@ export const useCookieConsent = (
     }
   }, [consent]);
 
-  const acceptCookies = (newConsent: CookieConsent, options?: AcceptCookiesOptions) => {
+  useEffect(() => {
+    if (consent?.necessary) {
+      localStorage.setItem(COOKIE_CONSENT_KEY, consent.toString());
+    }
+  }, [consent]);
+
+  const acceptCookies = (
+    newConsent: CookieConsent,
+    options?: AcceptCookiesOptions
+  ) => {
     if (options?.allowChangingNecessary) {
-      setConsent(newConsent)
+      setConsent(newConsent);
     } else {
-      setConsent({...newConsent, necessary: true});
-    };
+      setConsent({ ...newConsent, necessary: true });
+    }
   };
 
   const declineAllCookies = () => {
