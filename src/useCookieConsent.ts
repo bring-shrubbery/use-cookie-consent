@@ -16,32 +16,26 @@ export const useCookieConsent = (
 ): CookieConsentHookState => {
   const initialConsent: CookieConsent =
     Cookies.getJSON(COOKIE_CONSENT_KEY) ||
+    JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY)) ||
+    JSON.parse(sessionStorage.getItem(COOKIE_CONSENT_KEY)) ||
     options?.defaultConsent ||
-    options?.localStorage ||
     DEFAULT_CONSENT;
 
   const [consent, setConsent] = useState<CookieConsent>(initialConsent);
 
-  console.log('options', options);
-  console.log('consent', consent);
-
-  // useEffect(() => {
-  //   if (consent?.necessary) {
-  //     Cookies.set(
-  //       COOKIE_CONSENT_KEY,
-  //       consent,
-  //       options?.consentCookieAttributes
-  //     );
-  //   }
-  // }, [consent]);
-
   useEffect(() => {
-    if (consent?.necessary) {
-      localStorage.setItem(
+    if (consent?.necessary && options === undefined) {
+      Cookies.set(
         COOKIE_CONSENT_KEY,
-        JSON.stringify(consent)
-        // options?.consentCookieAttributes
+        consent,
+        options?.consentCookieAttributes
       );
+    }
+    if (consent?.necessary && options?.localStorage === true) {
+      localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+    }
+    if (consent?.necessary && options?.sessionStorage === true) {
+      sessionStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
     }
   }, [consent]);
 

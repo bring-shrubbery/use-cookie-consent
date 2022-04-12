@@ -13,6 +13,7 @@
   },
   "include": ["src/**/*"],
   "exclude": [
+    "src/stories",
     "node_modules",
     "build",
     "src/**/*.stories.tsx",
