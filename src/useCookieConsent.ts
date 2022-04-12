@@ -31,12 +31,6 @@ export const useCookieConsent = (
     }
   }, [consent]);
 
-  useEffect(() => {
-    if (consent?.necessary) {
-      localStorage.setItem(COOKIE_CONSENT_KEY, consent.toString());
-    }
-  }, [consent]);
-
   const acceptCookies = (
     newConsent: CookieConsent,
     options?: AcceptCookiesOptions
