@@ -31,12 +31,15 @@ export const useCookieConsent = (
     }
   }, [consent]);
 
-  const acceptCookies = (newConsent: CookieConsent, options?: AcceptCookiesOptions) => {
+  const acceptCookies = (
+    newConsent: CookieConsent,
+    options?: AcceptCookiesOptions
+  ) => {
     if (options?.allowChangingNecessary) {
-      setConsent(newConsent)
+      setConsent(newConsent);
     } else {
-      setConsent({...newConsent, necessary: true});
-    };
+      setConsent({ ...newConsent, necessary: true });
+    }
   };
 
   const declineAllCookies = () => {
