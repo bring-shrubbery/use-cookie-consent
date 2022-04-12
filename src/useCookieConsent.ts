@@ -17,16 +17,30 @@ export const useCookieConsent = (
   const initialConsent: CookieConsent =
     Cookies.getJSON(COOKIE_CONSENT_KEY) ||
     options?.defaultConsent ||
+    options?.localStorage ||
     DEFAULT_CONSENT;
 
   const [consent, setConsent] = useState<CookieConsent>(initialConsent);
 
+  console.log('options', options);
+  console.log('consent', consent);
+
+  // useEffect(() => {
+  //   if (consent?.necessary) {
+  //     Cookies.set(
+  //       COOKIE_CONSENT_KEY,
+  //       consent,
+  //       options?.consentCookieAttributes
+  //     );
+  //   }
+  // }, [consent]);
+
   useEffect(() => {
     if (consent?.necessary) {
-      Cookies.set(
+      localStorage.setItem(
         COOKIE_CONSENT_KEY,
-        consent,
-        options?.consentCookieAttributes
+        JSON.stringify(consent)
+        // options?.consentCookieAttributes
       );
     }
   }, [consent]);

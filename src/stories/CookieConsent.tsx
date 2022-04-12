@@ -4,6 +4,10 @@ import { useCookieConsent } from '../useCookieConsent';
 export const CookieConsent = () => {
   const { consent, acceptAllCookies, declineAllCookies, acceptCookies } =
     useCookieConsent();
+  const data = useCookieConsent({
+    localStorage: true,
+  });
+  console.log(data);
   return (
     <div>
       <h3>
