@@ -14,28 +14,31 @@ import { allCookiesSetToValue, allPropsApproved } from './utils';
 export const useCookieConsent = (
   options?: CookieConsentOptions
 ): CookieConsentHookState => {
+  const storedConsent =
+    typeof options !== 'undefined' && 'storage' in options
+      ? JSON.parse(options?.storage.getItem(COOKIE_CONSENT_KEY))
+      : Cookies.getJSON(COOKIE_CONSENT_KEY);
+
   const initialConsent: CookieConsent =
-    Cookies.getJSON(COOKIE_CONSENT_KEY) ||
-    JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY)) ||
-    JSON.parse(sessionStorage.getItem(COOKIE_CONSENT_KEY)) ||
-    options?.defaultConsent ||
-    DEFAULT_CONSENT;
+    storedConsent || options?.defaultConsent || DEFAULT_CONSENT;
 
   const [consent, setConsent] = useState<CookieConsent>(initialConsent);
 
   useEffect(() => {
-    if (consent?.necessary && options === undefined) {
-      Cookies.set(
-        COOKIE_CONSENT_KEY,
-        consent,
-        options?.consentCookieAttributes
-      );
-    }
-    if (consent?.necessary && options?.localStorage === true) {
-      localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-    }
-    if (consent?.necessary && options?.sessionStorage === true) {
-      sessionStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+    if (consent?.necessary) {
+      if (typeof options !== 'undefined' && 'storage' in options) {
+        options.storage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+      }
+      if (
+        typeof options === 'undefined' ||
+        'consentCookieAttributes' in options
+      ) {
+        Cookies.set(
+          COOKIE_CONSENT_KEY,
+          consent,
+          options?.consentCookieAttributes
+        );
+      }
     }
   }, [consent]);
 
@@ -76,6 +79,8 @@ export const useCookieConsent = (
     }, true);
   };
 
+  //TODO other wrapper for storage
+
   const cookieWrapper: CookieWrapper = {
     set: (name, value, props, options) => {
       if (!allPropsApproved(props, consent)) return undefined;
@@ -87,6 +92,18 @@ export const useCookieConsent = (
     getAllJSON: Cookies.getJSON,
     remove: Cookies.remove,
   };
+
+  if (typeof options !== 'undefined' && 'storage' in options) {
+    return {
+      consent,
+      acceptCookies,
+      declineAllCookies,
+      acceptAllCookies,
+      didAcceptAll,
+      didDeclineAll,
+      cookies: cookieWrapper, //TODO replace wrapper
+    };
+  }
 
   return {
     consent,

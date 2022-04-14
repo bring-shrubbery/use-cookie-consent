@@ -72,12 +72,18 @@ export interface CookieConsentHookState extends CookieConsentHookActions {
   consent: CookieConsent;
 }
 
-export interface CookieConsentOptions {
+export interface CookieConsentOptionsCookie {
   defaultConsent?: CookieConsent;
   consentCookieAttributes?: CookieAttributes;
-  localStorage?: boolean;
-  sessionStorage?: boolean;
 }
+export interface CookieConsentOptionsStorage {
+  defaultConsent?: CookieConsent;
+  storage?: Storage;
+}
+
+export type CookieConsentOptions =
+  | CookieConsentOptionsCookie
+  | CookieConsentOptionsStorage;
 
 export interface AcceptCookiesOptions {
   allowChangingNecessary?: boolean;

@@ -3,7 +3,7 @@ import { useCookieConsent } from '../useCookieConsent';
 
 export const CookieConsent = () => {
   const { consent, acceptAllCookies, declineAllCookies, acceptCookies } =
-    useCookieConsent({ sessionStorage: true, localStorage: true });
+    useCookieConsent();
 
   return (
     <div>

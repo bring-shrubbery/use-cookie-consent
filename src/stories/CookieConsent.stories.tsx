@@ -7,6 +7,14 @@ export default {
   component: CookieConsent,
 } as ComponentMeta<typeof CookieConsent>;
 
-const Template: ComponentStory<typeof CookieConsent> = () => <CookieConsent />;
+const Template: ComponentStory<typeof CookieConsent> = (args) => (
+  <CookieConsent {...args} />
+);
 
-export const FirstStory = Template.bind({});
+//TODO storage stories
+
+export const DefaultStory = Template.bind({});
+export const LocalStorage: ComponentStory<typeof CookieConsent> = () => (
+  <CookieConsent />
+);
+DefaultStory.args = {};
