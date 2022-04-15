@@ -11,10 +11,9 @@ const Template: ComponentStory<typeof CookieConsent> = (args) => (
   <CookieConsent {...args} />
 );
 
-//TODO storage stories
-
-export const DefaultStory = Template.bind({});
-export const LocalStorage: ComponentStory<typeof CookieConsent> = () => (
-  <CookieConsent />
-);
-DefaultStory.args = {};
+export const CookieDefaultStory = Template.bind({});
+export const LocalStorage = Template.bind({});
+export const SessionStorage = Template.bind({});
+CookieDefaultStory.args = {};
+LocalStorage.args = { local: 'local' };
+SessionStorage.args = { session: 'session' };

@@ -79,8 +79,6 @@ export const useCookieConsent = (
     }, true);
   };
 
-  //TODO other wrapper for storage
-
   const cookieWrapper: CookieWrapper = {
     set: (name, value, props, options) => {
       if (!allPropsApproved(props, consent)) return undefined;
@@ -94,6 +92,14 @@ export const useCookieConsent = (
   };
 
   if (typeof options !== 'undefined' && 'storage' in options) {
+    const storageWrapper = {
+      clear: options.storage.clear,
+      getItem: options.storage.getItem,
+      key: options.storage.key,
+      length: options.storage.length,
+      removeItem: options.storage.removeItem,
+      setItem: options.storage.setItem,
+    };
     return {
       consent,
       acceptCookies,
@@ -101,7 +107,7 @@ export const useCookieConsent = (
       acceptAllCookies,
       didAcceptAll,
       didDeclineAll,
-      cookies: cookieWrapper, //TODO replace wrapper
+      cookies: storageWrapper,
     };
   }
 

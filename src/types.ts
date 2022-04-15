@@ -63,8 +63,10 @@ export interface CookieConsentHookActions {
   acceptAllCookies: () => void;
   didAcceptAll: () => boolean;
   didDeclineAll: DidDeclineAllHandler;
-  cookies: CookieWrapper;
+  cookies: CookieWrapperType;
 }
+
+export type CookieWrapperType = CookieWrapper | Storage;
 
 export type CookieConsent = CookieTypes;
 
