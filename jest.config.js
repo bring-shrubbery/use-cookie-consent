@@ -1,6 +1,8 @@
 module.exports = {
   roots: ['./src'],
   // setupFilesAfterEnv: ['./jest.setup.ts'],
+  resetMocks: false,
+  setupFiles: ['jest-localstorage-mock'],
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   testPathIgnorePatterns: ['node_modules/'],
   transform: {

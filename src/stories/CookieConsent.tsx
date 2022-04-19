@@ -2,13 +2,18 @@ import React from 'react';
 import { useCookieConsent } from '../useCookieConsent';
 
 export const CookieConsent = (storageProp) => {
-  const storageType = storageProp.local
-    ? { storage: localStorage }
-    : storageProp.session
-    ? { storage: sessionStorage }
-    : undefined;
+  const storage = (() => {
+    switch (storageProp.storage) {
+      case 'local':
+        return { storage: localStorage };
+      case 'session':
+        return { storage: sessionStorage };
+      default:
+        return undefined;
+    }
+  })();
   const { consent, acceptAllCookies, declineAllCookies, acceptCookies } =
-    useCookieConsent(storageType);
+    useCookieConsent(storage);
 
   return (
     <div>

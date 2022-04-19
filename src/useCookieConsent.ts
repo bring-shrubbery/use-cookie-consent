@@ -3,7 +3,7 @@ import * as Cookies from 'js-cookie';
 import { COOKIE_CONSENT_KEY, DEFAULT_CONSENT } from './constants';
 import {
   CookieConsent,
-  CookieConsentHookState,
+  ConsentHookStateType,
   CookieConsentOptions,
   CookieWrapper,
   DidDeclineAllHandler,
@@ -13,11 +13,13 @@ import { allCookiesSetToValue, allPropsApproved } from './utils';
 
 export const useCookieConsent = (
   options?: CookieConsentOptions
-): CookieConsentHookState => {
-  const storedConsent =
-    typeof options !== 'undefined' && 'storage' in options
-      ? JSON.parse(options?.storage.getItem(COOKIE_CONSENT_KEY))
-      : Cookies.getJSON(COOKIE_CONSENT_KEY);
+): ConsentHookStateType => {
+  const doesStorageExist =
+    typeof options !== 'undefined' && 'storage' in options;
+
+  const storedConsent = doesStorageExist
+    ? JSON.parse(options?.storage.getItem(COOKIE_CONSENT_KEY))
+    : Cookies.getJSON(COOKIE_CONSENT_KEY);
 
   const initialConsent: CookieConsent =
     storedConsent || options?.defaultConsent || DEFAULT_CONSENT;
@@ -26,10 +28,9 @@ export const useCookieConsent = (
 
   useEffect(() => {
     if (consent?.necessary) {
-      if (typeof options !== 'undefined' && 'storage' in options) {
+      if (doesStorageExist) {
         options.storage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-      }
-      if (
+      } else if (
         typeof options === 'undefined' ||
         'consentCookieAttributes' in options
       ) {
@@ -91,15 +92,7 @@ export const useCookieConsent = (
     remove: Cookies.remove,
   };
 
-  if (typeof options !== 'undefined' && 'storage' in options) {
-    const storageWrapper = {
-      clear: options.storage.clear,
-      getItem: options.storage.getItem,
-      key: options.storage.key,
-      length: options.storage.length,
-      removeItem: options.storage.removeItem,
-      setItem: options.storage.setItem,
-    };
+  if (doesStorageExist) {
     return {
       consent,
       acceptCookies,
@@ -107,7 +100,7 @@ export const useCookieConsent = (
       acceptAllCookies,
       didAcceptAll,
       didDeclineAll,
-      cookies: storageWrapper,
+      storage: options.storage,
     };
   }
 

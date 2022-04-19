@@ -15,5 +15,5 @@ export const CookieDefaultStory = Template.bind({});
 export const LocalStorage = Template.bind({});
 export const SessionStorage = Template.bind({});
 CookieDefaultStory.args = {};
-LocalStorage.args = { local: 'local' };
-SessionStorage.args = { session: 'session' };
+LocalStorage.args = { storage: 'local' };
+SessionStorage.args = { storage: 'session' };
