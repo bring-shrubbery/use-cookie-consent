@@ -2,18 +2,15 @@ import { useState, useEffect } from 'react';
 import * as Cookies from 'js-cookie';
 import { COOKIE_CONSENT_KEY, DEFAULT_CONSENT } from './constants';
 import {
-  CookieConsent,
-  ConsentHookStateType,
-  CookieConsentOptions,
+  UseCookieConsentType,
+  ConsentState,
   CookieWrapper,
   DidDeclineAllHandler,
   AcceptCookiesOptions,
 } from './types';
 import { allCookiesSetToValue, allPropsApproved } from './utils';
 
-export const useCookieConsent = (
-  options?: CookieConsentOptions
-): ConsentHookStateType => {
+export const useCookieConsent: UseCookieConsentType = (options) => {
   const doesStorageExist =
     typeof options !== 'undefined' && 'storage' in options;
 
@@ -21,30 +18,28 @@ export const useCookieConsent = (
     ? JSON.parse(options?.storage.getItem(COOKIE_CONSENT_KEY))
     : Cookies.getJSON(COOKIE_CONSENT_KEY);
 
-  const initialConsent: CookieConsent =
+  const initialConsent: ConsentState =
     storedConsent || options?.defaultConsent || DEFAULT_CONSENT;
 
-  const [consent, setConsent] = useState<CookieConsent>(initialConsent);
+  const [consent, setConsent] = useState<ConsentState>(initialConsent);
 
   useEffect(() => {
-    if (consent?.necessary) {
-      if (doesStorageExist) {
-        options.storage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-      } else if (
-        typeof options === 'undefined' ||
-        'consentCookieAttributes' in options
-      ) {
-        Cookies.set(
-          COOKIE_CONSENT_KEY,
-          consent,
-          options?.consentCookieAttributes
-        );
-      }
+    if (consent?.necessary && doesStorageExist) {
+      options.storage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+    } else if (
+      typeof options !== 'undefined' &&
+      'consentCookieAttributes' in options
+    ) {
+      Cookies.set(
+        COOKIE_CONSENT_KEY,
+        consent,
+        options?.consentCookieAttributes
+      );
     }
   }, [consent]);
 
   const acceptCookies = (
-    newConsent: CookieConsent,
+    newConsent: ConsentState,
     options?: AcceptCookiesOptions
   ) => {
     if (options?.allowChangingNecessary) {
@@ -63,7 +58,7 @@ export const useCookieConsent = (
   };
 
   const didAcceptAll = (): boolean => {
-    const keyArray = Object.keys(consent || {}) as (keyof CookieConsent)[];
+    const keyArray = Object.keys(consent || {}) as (keyof ConsentState)[];
 
     return keyArray.reduce<boolean>(
       (prev, key) => (prev && consent && consent[key]) || false,
@@ -72,7 +67,7 @@ export const useCookieConsent = (
   };
 
   const didDeclineAll: DidDeclineAllHandler = (opts) => {
-    const keyArray = Object.keys(consent || {}) as (keyof CookieConsent)[];
+    const keyArray = Object.keys(consent || {}) as (keyof ConsentState)[];
 
     return keyArray.reduce<boolean>((prev, key): boolean => {
       if (!opts?.includingNecessary && key === 'necessary') return prev;

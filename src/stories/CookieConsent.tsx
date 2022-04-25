@@ -2,7 +2,7 @@ import React from 'react';
 import { useCookieConsent } from '../useCookieConsent';
 
 export const CookieConsent = (storageProp) => {
-  const storage = (() => {
+  const options = (() => {
     switch (storageProp.storage) {
       case 'local':
         return { storage: localStorage };
@@ -13,7 +13,7 @@ export const CookieConsent = (storageProp) => {
     }
   })();
   const { consent, acceptAllCookies, declineAllCookies, acceptCookies } =
-    useCookieConsent(storage);
+    useCookieConsent(options);
 
   return (
     <div>
