@@ -8,6 +8,10 @@
   "files": [
     "build"
   ],
+  "resolutions": {
+     "glob-parent": "5.1.2",
+     "trim": "0.0.3"
+  },
   "engines": {
     "node": ">=12"
   },
@@ -91,6 +95,7 @@
     "typescript": "^4.2"
   },
   "dependencies": {
+    "glob-parent": "^6.0.2",
     "js-cookie": "^2"
   },
   "husky": {
