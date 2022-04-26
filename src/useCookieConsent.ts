@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import * as Cookies from 'js-cookie';
 import { COOKIE_CONSENT_KEY, DEFAULT_CONSENT } from './constants';
 import {
-  UseCookieConsentType,
+  UseConsentHookType,
   ConsentState,
   CookieWrapper,
   DidDeclineAllHandler,
@@ -10,7 +10,7 @@ import {
 } from './types';
 import { allCookiesSetToValue, allPropsApproved } from './utils';
 
-export const useCookieConsent: UseCookieConsentType = (options) => {
+export const useCookieConsent: UseConsentHookType = (options) => {
   const doesStorageExist =
     typeof options !== 'undefined' && 'storage' in options;
 
@@ -24,12 +24,10 @@ export const useCookieConsent: UseCookieConsentType = (options) => {
   const [consent, setConsent] = useState<ConsentState>(initialConsent);
 
   useEffect(() => {
+    if (!consent?.necessary) return;
     if (consent?.necessary && doesStorageExist) {
       options.storage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-    } else if (
-      typeof options !== 'undefined' &&
-      'consentCookieAttributes' in options
-    ) {
+    } else {
       Cookies.set(
         COOKIE_CONSENT_KEY,
         consent,
