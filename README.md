@@ -154,6 +154,10 @@ This hook function returns following object:
   - [ ] Svelte (planned)
 - [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?)
 
+## Contributing
+
+If you want to contribute to this project, read our [contributing guidelines](https://github.com/use-cookie-consent/use-cookie-consent/blob/main/CONTRIBUTING.md) first.
+
 ## Acknowledgements
 
 Following package was used as a starter for this project:
