@@ -9,8 +9,8 @@
     "build"
   ],
   "resolutions": {
-     "glob-parent": "5.1.2",
-     "trim": "0.0.3"
+    "glob-parent": "5.1.2",
+    "trim": "0.0.3"
   },
   "engines": {
     "node": ">=12"
@@ -64,14 +64,18 @@
     "@storybook/testing-library": "^0.0.9",
     "@testing-library/react": "^12.1.1",
     "@testing-library/react-hooks": "^7",
+    "@types/chai": "^4.3.1",
     "@types/jest": "^27.0.2",
     "@types/js-cookie": "^2",
+    "@types/mocha": "^9.1.1",
     "@types/node": "^14",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "babel-loader": "^8.2.4",
+    "chai": "^4.3.6",
+    "cypress": "^9.6.0",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -79,6 +83,7 @@
     "husky": "^7.0.4",
     "jest": "^27.2.3",
     "lint-staged": "^12.1.2",
+    "mocha": "^10.0.0",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
