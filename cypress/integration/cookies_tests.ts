@@ -9,13 +9,6 @@ describe('Cookie test', () => {
     expect(cy.getCookie(COOKIE_CONSENT_KEY)).to.exist;
   });
 
-  expect(
-    it('should fail', () => {
-      renderHook(() => useCookieConsent());
-      expect(cy.getCookie(COOKIE_CONSENT_KEY)).to.not.exist;
-    })
-  ).to.throw(Error);
-
   it('should call cookie hook, then update cookie value', () => {
     const { result } = renderHook(() => useCookieConsent());
     cy.getCookie(COOKIE_CONSENT_KEY)
