@@ -6,7 +6,6 @@ jobs:
   cypress-run:
    runs-on: ubuntu-latest
    
-   container: cypress/base:13.6.0
    steps:
      - name: Checkout
        uses: actions/checkout@v2
@@ -14,4 +13,5 @@ jobs:
      - name: Cypress run
        uses: cypress-io/github-action@v2
        with:
-        browser: firefox
+          build: npm run build
+          start: npm start
