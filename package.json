@@ -24,7 +24,8 @@
     "test:watch": "jest --watch",
     "coverage": "jest --ci --coverage",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cy:run": "cypress run"
   },
   "keywords": [
     "gdpr",
