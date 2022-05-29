@@ -28,6 +28,10 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       - name: Generate coverage report
         run: yarn coverage

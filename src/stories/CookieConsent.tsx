@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useCookieConsent } from '../useCookieConsent';
 
 export const CookieConsent = (storageProp) => {

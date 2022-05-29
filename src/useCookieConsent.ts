@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import * as Cookies from 'js-cookie';
+
 import { COOKIE_CONSENT_KEY, DEFAULT_CONSENT } from './constants';
 import {
-  UseConsentHookType,
+  AcceptCookiesOptions,
   ConsentState,
   CookieWrapper,
   DidDeclineAllHandler,
-  AcceptCookiesOptions,
+  UseConsentHookType,
 } from './types';
 import { allCookiesSetToValue, allPropsApproved } from './utils';
 

@@ -1,20 +1,11 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
+
 import { useCookieConsent } from '../useCookieConsent';
 
 describe('hook tests', () => {
   describe('all cookies get/set', () => {
     it('should accept all cookies', async () => {
       const { result } = renderHook(() => useCookieConsent());
-
-      act(() => result.current.acceptAllCookies());
-
-      expect(result.current.didAcceptAll()).toBeTruthy();
-      expect(result.current.didDeclineAll()).toBeFalsy();
-    });
-    it('should accept all cookies using localStorage', async () => {
-      const { result } = renderHook(() =>
-        useCookieConsent({ storage: localStorage })
-      );
 
       act(() => result.current.acceptAllCookies());
 
@@ -114,6 +105,4 @@ describe('hook tests', () => {
   });
 
   // TODO: Implement purpose cookie tests
-
-  // TODO: Test cookie wrapper or even better, allow providing own storage wrapper in the hook.
 });
