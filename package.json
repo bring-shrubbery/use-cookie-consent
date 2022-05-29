@@ -9,7 +9,7 @@
     "dist/"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --minify --external react",
