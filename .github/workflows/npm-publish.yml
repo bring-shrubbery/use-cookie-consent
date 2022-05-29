@@ -17,6 +17,10 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       - run: git config --global user.name 'BOT Gabe'
       - run: git config --global user.email 'bot.gabe@quassum.com'
