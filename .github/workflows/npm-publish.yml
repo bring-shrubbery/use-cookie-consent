@@ -8,17 +8,6 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-      - run: yarn install
-      - run: BUILD=production yarn build
-      - run: yarn test
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
@@ -32,7 +21,7 @@ jobs:
       - run: git config --global user.name 'BOT Gabe'
       - run: git config --global user.email 'bot.gabe@quassum.com'
       - run: yarn version --new-version ${{ github.event.release.tag_name }}
-      - run: yarn publish --access public
+      - run: yarn publish --access public # also builds
       - run: git push
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
