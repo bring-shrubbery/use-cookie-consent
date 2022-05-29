@@ -48,8 +48,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.9 || ^17",
-    "react-dom": "^16.9 || ^17"
+    "react": "^16.8 || ^17",
+    "react-dom": "^16.8 || ^17"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
