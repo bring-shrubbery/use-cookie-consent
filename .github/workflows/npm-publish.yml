@@ -33,5 +33,6 @@ jobs:
       - run: git config --global user.email 'bot.gabe@quassum.com'
       - run: yarn version --new-version ${{ github.event.release.tag_name }}
       - run: yarn publish --access public
+      - run: git push
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
