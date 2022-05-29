@@ -9,8 +9,8 @@
     "build"
   ],
   "resolutions": {
-     "glob-parent": "5.1.2",
-     "trim": "0.0.3"
+    "glob-parent": "5.1.2",
+    "trim": "0.0.3"
   },
   "engines": {
     "node": ">=12"
@@ -24,7 +24,8 @@
     "test:watch": "jest --watch",
     "coverage": "jest --ci --coverage",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cy:run": "cypress run"
   },
   "keywords": [
     "gdpr",
@@ -64,6 +65,7 @@
     "@storybook/testing-library": "^0.0.9",
     "@testing-library/react": "^12.1.1",
     "@testing-library/react-hooks": "^7",
+    "@types/chai": "^4.3.1",
     "@types/jest": "^27.0.2",
     "@types/js-cookie": "^2",
     "@types/node": "^14",
@@ -72,6 +74,8 @@
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "babel-loader": "^8.2.4",
+    "chai": "^4.3.6",
+    "cypress": "^9.6.0",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
