@@ -7,6 +7,13 @@ export default {
   component: CookieConsent,
 } as ComponentMeta<typeof CookieConsent>;
 
-const Template: ComponentStory<typeof CookieConsent> = () => <CookieConsent />;
+const Template: ComponentStory<typeof CookieConsent> = (args) => (
+  <CookieConsent {...args} />
+);
 
-export const FirstStory = Template.bind({});
+export const CookieDefaultStory = Template.bind({});
+export const LocalStorage = Template.bind({});
+export const SessionStorage = Template.bind({});
+CookieDefaultStory.args = {};
+LocalStorage.args = { storage: 'local' };
+SessionStorage.args = { storage: 'session' };

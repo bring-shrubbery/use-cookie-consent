@@ -57,24 +57,46 @@ export type DidDeclineAllHandler = (opts?: {
   includingNecessary: boolean;
 }) => boolean;
 
-export interface CookieConsentHookActions {
+export interface ConsentHookActions {
   acceptCookies: (cookies: CookieTypes, options?: AcceptCookiesOptions) => void;
   declineAllCookies: () => void;
   acceptAllCookies: () => void;
   didAcceptAll: () => boolean;
   didDeclineAll: DidDeclineAllHandler;
-  cookies: CookieWrapper;
 }
 
-export type CookieConsent = CookieTypes;
+export type ConsentState = CookieTypes;
 
-export interface CookieConsentHookState extends CookieConsentHookActions {
-  consent: CookieConsent;
+export interface CookieConsentHookState extends ConsentHookActions {
+  cookies?: CookieWrapper;
+  consent: ConsentState;
 }
 
-export interface CookieConsentOptions {
-  defaultConsent?: CookieConsent;
+export interface StorageConsentHookState extends ConsentHookActions {
+  storage: Storage;
+  consent: ConsentState;
+}
+
+export type UseCookieConsentHookType = (
+  options?: CookieConsentHookOptions
+) => CookieConsentHookState;
+
+export type UseStorageConsentHookType = (
+  options?: StorageConsentHookOptions
+) => StorageConsentHookState;
+
+export type UseConsentHookType =
+  | UseCookieConsentHookType
+  | UseStorageConsentHookType;
+
+export interface CookieConsentHookOptions {
+  defaultConsent?: ConsentState;
   consentCookieAttributes?: CookieAttributes;
+}
+
+export interface StorageConsentHookOptions {
+  defaultConsent?: ConsentState;
+  storage?: Storage;
 }
 
 export interface AcceptCookiesOptions {

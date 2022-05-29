@@ -11,6 +11,16 @@ describe('hook tests', () => {
       expect(result.current.didAcceptAll()).toBeTruthy();
       expect(result.current.didDeclineAll()).toBeFalsy();
     });
+    it('should accept all cookies using localStorage', async () => {
+      const { result } = renderHook(() =>
+        useCookieConsent({ storage: localStorage })
+      );
+
+      act(() => result.current.acceptAllCookies());
+
+      expect(result.current.didAcceptAll()).toBeTruthy();
+      expect(result.current.didDeclineAll()).toBeFalsy();
+    });
 
     it('should decline all cookies', async () => {
       const { result } = renderHook(() => useCookieConsent());
@@ -25,7 +35,6 @@ describe('hook tests', () => {
   describe('provenance cookies', () => {
     it('should be able to accept and decline third party cookies', async () => {
       const { result } = renderHook(() => useCookieConsent());
-
       act(() => result.current.acceptCookies({ thirdParty: true }));
       expect(result.current.consent.thirdParty).toBeTruthy();
 
