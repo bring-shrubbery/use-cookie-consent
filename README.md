@@ -152,6 +152,10 @@ This hook function returns following object:
   - [x] React [here](https://github.com/use-cookie-consent/use-cookie-consent-react)
   - [ ] Vue (planned)
   - [ ] Svelte (planned)
+  - [ ] Solid (planned)
+  - [ ] Preact (planned)
+  - [ ] Alpine (planned)
+  - [ ] Lit (planned)
 - [ ] Change `CookiesWrapper` API to something that doesn't require a specific dependency (maybe just Storage API step?)
 
 ## Contributing
