@@ -45,17 +45,15 @@ The hook in this repository will provide a way to manage these types of cookies.
 
 ## Installation
 
-Using `npm`:
-
 ```bash
 npm i @use-cookie-consent/core
-```
 
-Using `yarn`:
-
-```bash
 yarn add @use-cookie-consent/core
+
+pnpm add @use-cookie-consent/core
 ```
+
+⚠️ **Note:** to have React v18 support, temporarily install `@use-cookie-consent/core@0.4.0-dev.4`. All further development will support React v18, so this note will disappear in the future.
 
 ## Usage in React
 
